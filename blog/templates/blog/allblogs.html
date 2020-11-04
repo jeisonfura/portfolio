@@ -1,0 +1,23 @@
+{% include 'jobs/header.html' %}
+<main role="main">
+  <div class="container">
+    <h1 class="text-center">Blogs</h1>
+    <p class="lead text-muted">A collection of informative blogs that I've written.</p>
+    <h2>Latest</h2>
+    <div class="row">
+      <div class="col-md-4">
+      {% for blog in blogs.all %}
+        <h3><a href="{% url 'full_blog' blog.id %}">{{ blog.title }}</a></h3>
+        {{ blog.pub_pretty_date }}
+        <div class="card mb-4 shadow-sm">
+          <img src="{{ blog.thumb.url }}" />
+          <div class="card-body">
+            <p class="card-text">{{ blog.summary }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% include 'jobs/footer.html' %}

@@ -1,0 +1,12 @@
+{% include 'jobs/header.html' %}
+
+<main role="main">
+  <div class="container">
+    <h1 class="text-center">{{ blog.title }}</h1>
+    <p class="text-center">{{ blog.pub_pretty_date }}</p>
+    <img src="{{ blog.thumb.url }}" /><br />
+    <p>{{ blog.body }}</p>
+  </div>
+</main>
+
+{% include 'jobs/footer.html' %}

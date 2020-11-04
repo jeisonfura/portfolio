@@ -1,0 +1,31 @@
+
+{% include 'jobs/header.html' %}
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Hi, I'm Jason Fuller</h1>
+      <p class="lead text-muted">I love learning and working on projects. This website is basically my resume, and a place to write about technologies I've learned. Writing things out and forcing your brain to process
+      the information differently is one of the best ways to learn.</p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for job in jobs.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="{{ job.image.url }}" />
+            <div class="card-body">
+              <p class="card-text">{{ job.summary }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% include 'jobs/footer.html' %}

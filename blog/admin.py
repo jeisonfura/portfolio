@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Blog, models
+
+admin.site.register(Blog)
+
+formfield_overrides = {
+    models.TextField: {'widget': TinyMCE(attrs={'cols': 80, 'rows': 30})},
+}
